@@ -1,3 +1,0 @@
-# techtest
-
-Coding assignmnet
