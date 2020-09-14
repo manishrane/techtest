@@ -62,7 +62,7 @@ public class ServerImpl implements Server {
     }
 
     @Override
-    public boolean updateDataByBlockName(String blockName , BlockTypeEnum blockTypeEnum) {
+    public boolean updateDataByBlockName(String blockName, BlockTypeEnum blockTypeEnum) {
 
         dataBodyServiceImpl.getDataByBlockName(blockName)
                 .map(dataBodyEntity -> {
@@ -70,10 +70,7 @@ public class ServerImpl implements Server {
                     saveData(dataBodyEntity);
                     return true;
                 })
-                .orElseThrow(() -> new BlockNotFoundException("No block found with the Name :" + blockName))
-        ;
-
-
+                .orElseThrow(() -> new BlockNotFoundException("No block found with the Name :" + blockName));
         return true;
     }
 

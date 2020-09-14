@@ -1,18 +1,17 @@
 package com.db.dataplatform.techtest.server.api.controller;
 
-import com.db.dataplatform.techtest.server.api.model.DataEnvelope;
 import com.db.dataplatform.techtest.server.component.Server;
-import com.db.dataplatform.techtest.server.persistence.BlockTypeEnum;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -38,7 +37,7 @@ public class HadoopDummyServerController {
         // Simulate long running work.
         Thread.sleep(workDuration);
 
-        if(workDuration > 3000) {
+        if (workDuration > 3000) {
             log.info("Hadoop back end has timed out");
             return ResponseEntity.status(HttpStatus.GATEWAY_TIMEOUT).build();
         }
@@ -48,10 +47,4 @@ public class HadoopDummyServerController {
     }
 
 
-    @GetMapping("/getbigdata")
-    public ResponseEntity<HttpStatus> getData(@PathVariable BlockTypeEnum blockType) {
-
-        log.info("in the get");
-        return ResponseEntity.ok().build();
-    }
 }

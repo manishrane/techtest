@@ -42,7 +42,7 @@ public class DataBodyServiceTests {
     }
 
     @Test
-    public void shouldSaveDataBodyEntityAsExpected(){
+    public void shouldSaveDataBodyEntityAsExpected() {
         dataBodyService.saveDataBody(expectedDataBodyEntity);
 
         verify(dataStoreRepositoryMock, times(1))
@@ -50,7 +50,7 @@ public class DataBodyServiceTests {
     }
 
     @Test
-    public void shouldGettDataByBlockTypeAsExpected(){
+    public void shouldGettDataByBlockTypeAsExpected() {
         when(dataStoreRepositoryMock.findDataByBlockType(BlockTypeEnum.BLOCKTYPEA)).thenReturn(dataBodyEntityList);
         dataBodyService.getDataByBlockType(BlockTypeEnum.BLOCKTYPEA);
 
@@ -59,7 +59,7 @@ public class DataBodyServiceTests {
 
 
     @Test
-    public void shouldGettDataaByBlockNameAsExpected(){
+    public void shouldGettDataaByBlockNameAsExpected() {
         Optional<DataBodyEntity> dataBodyEntity = Optional.of(expectedDataBodyEntity);
 
         when(dataStoreRepositoryMock.findDataByBlockName(anyString())).thenReturn(dataBodyEntity);

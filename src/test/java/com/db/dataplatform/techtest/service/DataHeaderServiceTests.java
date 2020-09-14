@@ -34,7 +34,7 @@ public class DataHeaderServiceTests {
     }
 
     @Test
-    public void shouldSaveDataHeaderEntityAsExpected(){
+    public void shouldSaveDataHeaderEntityAsExpected() {
         dataHeaderService.saveHeader(expectedDataHeaderEntity);
 
         verify(dataHeaderRepositoryMock, times(1))

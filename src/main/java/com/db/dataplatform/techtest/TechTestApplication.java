@@ -37,11 +37,11 @@ public class TechTestApplication {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void initiatePushDataFlow() throws JsonProcessingException, UnsupportedEncodingException {
-		//pushData();
+		pushData();
 
-//		queryData();
+		queryData();
 
-//		updateData();
+		updateData();
 	}
 
 	private void updateData() throws UnsupportedEncodingException {
